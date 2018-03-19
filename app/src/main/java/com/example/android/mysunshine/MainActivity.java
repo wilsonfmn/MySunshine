@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public static class PlaceholderFragment extends Fragment {
 
         public PlaceholderFragment() {
-
+            // commit using android studio
         }
 
         @Override
