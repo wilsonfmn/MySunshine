@@ -8,6 +8,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,6 +62,19 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+            List<String> fakeData = new ArrayList<>();
+            fakeData.add("Today-Sunny-88/63");
+            fakeData.add("Tomorrow-Foggy-70/46");
+            fakeData.add("Weds-Cloudy-72/63");
+            fakeData.add("Thurs-Rainy-64/51");
+            fakeData.add("Fri-Foggy-70/46");
+            fakeData.add("Sat-Sunny-76/68");
+
+            ListAdapter listAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast, R.id.list_item_forecast_textview, fakeData);
+            ListView forecastView = rootView.findViewById(R.id.listview_forecast);
+            forecastView.setAdapter(listAdapter);
+
             return rootView;
         }
     }
