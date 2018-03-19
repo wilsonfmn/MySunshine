@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             fakeData.add("Sat-Sunny-76/68");
 
             ListAdapter listAdapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item_forecast, R.id.list_item_forecast_textview, fakeData);
+            // Consigo pegar diretamente do rootView, tornando a busca menor
             ListView forecastView = rootView.findViewById(R.id.listview_forecast);
             forecastView.setAdapter(listAdapter);
 
