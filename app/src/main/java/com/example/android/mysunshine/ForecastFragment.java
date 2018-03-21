@@ -52,7 +52,7 @@ public class ForecastFragment extends Fragment {
         int itemId = item.getItemId();
         // por enquanto só tenho 1, então verifico se é o de refresh
         if(itemId == R.id.action_refresh) {
-            AsyncTask weatherTask = new FetchWeatherTask();
+            FetchWeatherTask weatherTask = new FetchWeatherTask();
             weatherTask.execute();
             return true;
         }
